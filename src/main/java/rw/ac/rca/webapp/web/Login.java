@@ -22,7 +22,7 @@ import rw.ac.rca.webapp.util.Util;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final Logger LOG = Logger.getLogger(Login.class);
-	private UserDAO userDAO = UserDAOImpl.getInstance();
+	private final UserDAO userDAO = UserDAOImpl.getInstance();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -90,7 +90,7 @@ public class Login extends HttpServlet {
 
 					if (privilege.equals(UserRole.ADMINISTRATOR)) {
 						request.getRequestDispatcher("WEB-INF/homeadmin.jsp").forward(request, response);
-					} else if (authenticatedUser != null && privilege.equals(UserRole.GUEST)) {
+					} else if (privilege.equals(UserRole.GUEST)) {
 						request.getRequestDispatcher("WEB-INF/homeguest.jsp").forward(request, response);
 					} else if (privilege.equals(UserRole.EMPLOYEE)) {
 						request.getRequestDispatcher("WEB-INF/homeemployee.jsp").forward(request, response);

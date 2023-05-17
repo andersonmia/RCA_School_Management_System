@@ -56,8 +56,9 @@ public class Enrol implements Serializable{
 		this.enrollmentLevel = enrollmentLevel;
 	}
 	@ManyToOne
-	@JoinColumn(name = "student_id")
+	@JoinColumn(name = "student_id", referencedColumnName = "id")
 	private Student student;
+
 	@ManyToOne
 	@JoinColumn(name = "course_id")
 	private Course course;

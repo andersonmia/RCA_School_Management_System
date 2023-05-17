@@ -18,7 +18,7 @@ public interface UserDAO {
 
 	public User updateUser(User user);
 
-	public User saveOrUpdateUser(User user);
+	public void saveOrUpdateUser(User user);
 
 	public boolean deleteUser(User user);
 

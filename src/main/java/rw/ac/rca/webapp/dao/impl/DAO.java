@@ -5,6 +5,7 @@ package rw.ac.rca.webapp.dao.impl;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import rw.ac.rca.webapp.orm.Student;
 import rw.ac.rca.webapp.util.SmisSessionFactory;
 
 /**
@@ -12,7 +13,7 @@ import rw.ac.rca.webapp.util.SmisSessionFactory;
  * 
  * @author Aphrodice Rwagaju
  */
-public class DAO {
+public abstract class DAO {
 
 	protected DAO() {
 	}

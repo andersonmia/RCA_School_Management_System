@@ -28,16 +28,14 @@ public class CourseDAOImpl extends DAO implements CourseDAO {
 		}
 	}
 	
-	public Course saveCourse(Course course) {
+	public void saveCourse(Course course) {
 		try {
 			begin();
 			getSession().save(course);
 			commit();
-			return course;
-		} catch (Exception e) {
+        } catch (Exception e) {
 			rollback();
-			return null;
-		}
+        }
 	}
 
 	public Course updateCourse(Course course) {

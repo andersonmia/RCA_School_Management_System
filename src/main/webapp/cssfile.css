@@ -2,7 +2,7 @@
 
 body {
 	background: #fff url("images/bgimg.png") repeat;
-	margin-top: 0px;
+	margin-top: 0;
 }
 
 thead {
@@ -22,7 +22,7 @@ tbody tr {
 }
 
 hr {
-	margin: 1px 0px 0px 0px;
+	margin: 1px 0 0 0;
 	clear: both;
 }
 
@@ -77,7 +77,6 @@ hr {
 	width: 100px;
 	font-style: normal;
 	border: 1px solid #ccc;
-	border-style: solid none solid none;
 	position: relative;
 	float: left;
 }
@@ -88,7 +87,6 @@ hr {
 	width: 400px;
 	font-style: normal;
 	border: 1px solid #ccc;
-	border-style: solid none solid none;
 	position: relative;
 	opacity:1.0;
 	filter:alpha(opacity=100); /* For IE8 and earlier */
@@ -98,24 +96,22 @@ hr {
 	height: auto;
 	width: auto;
 	font-style: normal;
-	font-family: georgia;
+	font-family: georgia, serif;
 }
 
 #middle {
 	height: auto;
 	width: auto;
 	font-style: normal;
-	font-family: georgia;
+	font-family: georgia, serif;
 	margin-top: 1px;
 	background: #fff url("images/banner_bg.jpg") top repeat-x;
 	border: 1px solid #ccc;
-	border-style: solid solid solid solid;
 }
 
 #nav {
 	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
 	border: 1px solid #ccc;
-	border-style: solid none solid none;
 	margin-top: 3px;
 	padding: 7px 12px;
 }
@@ -127,28 +123,25 @@ hr {
 
 #footer {
 	background: url("images/banner_bg.png") repeat-x scroll left top transparent;
-	border: 1px solid #ccc;
 	border-bottom: 1px solid #777;
-	border-style: solid none solid none;
 	color: #428BCA;
 	text-align: center;
 	width: 1000px;
 	font-size: x-small;
 	height: 30px;
-	font-family: georgia;
+	font-family: georgia, serif;
 }
 
 #footerlogin {
 	background: #80ADE5;
 	border: 1px solid #ccc;
 	border-bottom: 1px solid #777;
-	border-style: solid none solid none;
 	color: #fff;
 	text-align: center;
 	width: 400px;
 	font-size: x-small;
 	height: 30px;
-	font-family: georgia;
+	font-family: georgia, serif;
 }
 
 a {

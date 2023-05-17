@@ -35,6 +35,10 @@ public class AcademicYear {
 		this.name = name;
 	}
 
+	public AcademicYear() {
+
+	}
+
 	public int getId() {
 		return id;
 	}

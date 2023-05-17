@@ -25,6 +25,26 @@ public abstract class Person implements Serializable{
 	int id;
 	private String firstName;
 	private String lastName;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	private String email;
+
+	public Person(int id, String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.dateOfBirth = dateOfBirth;
+		this.phoneNumber = phoneNumber;
+	}
+
 	private Date dateOfBirth;
 	private String phoneNumber;
 	

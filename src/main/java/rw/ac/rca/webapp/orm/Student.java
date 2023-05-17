@@ -1,74 +1,81 @@
- /**
- * 
- */
 package rw.ac.rca.webapp.orm;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-/**
- * @author Aphrodice Rwagaju
- *
- */
 @Entity
-public class Student extends Person{
+@Table(name = "student")
+public class Student extends Person implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8680703317249517930L;
 	private boolean isInternational;
 	private boolean isPartTime;
 	private boolean isRepeating;
-	
-	public Student() {
-	}
-	
+
+	@OneToMany(mappedBy = "student")
+	private List<Enrol> enrols;
+
+
+	@OneToMany(mappedBy = "student")
+	private List<Marks> marks;
+
+	@ManyToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
+
+
+	public Student() {}
+
 	public Student(boolean isInternational, boolean isPartTime, boolean isRepeating) {
 		this.isInternational = isInternational;
 		this.isPartTime = isPartTime;
 		this.isRepeating = isRepeating;
 	}
-	
-	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "student")
-	private List<Enrol> enrols;
-	
-	@ManyToOne
-	@JoinColumn(name = "address_id")
-	private Address address;
-	
+
+	public Student(String firstName, String lastName, Date dateOfBirth, String phoneNumber) {
+	}
+
 	public boolean isInternational() {
 		return isInternational;
 	}
-	public void setInternational(boolean isInternational) {
-		this.isInternational = isInternational;
+
+	public void setInternational(boolean international) {
+		isInternational = international;
 	}
+
 	public boolean isPartTime() {
 		return isPartTime;
 	}
-	public void setPartTime(boolean isPartTime) {
-		this.isPartTime = isPartTime;
+
+	public void setPartTime(boolean partTime) {
+		isPartTime = partTime;
 	}
-	
-	public List<Enrol> getEnrols() {
-   		return enrols;
-	}
-	public void setEnrollments(List<Enrol> enrols) {
-		this.enrols = enrols;
-	}
-	
+
 	public boolean isRepeating() {
 		return isRepeating;
 	}
-	public void setRepeating(boolean isRepeating) {
-		this.isRepeating = isRepeating;
+
+	public void setRepeating(boolean repeating) {
+		isRepeating = repeating;
 	}
+
+	public List<Enrol> getEnrols() {
+		return enrols;
+	}
+
+	public void setEnrols(List<Enrol> enrols) {
+		this.enrols = enrols;
+	}
+
+	public List<Marks> getMarks() {
+		return marks;
+	}
+
+	public void setMarks(List<Marks> marks) {
+		this.marks = marks;
+	}
+
 	public Address getAddress() {
 		return address;
 	}
@@ -77,9 +84,4 @@ public class Student extends Person{
 		this.address = address;
 	}
 
-//	@Override
-//	String getAllNames() {
-//		return getFirstName()+ " "+ getLastName();
-//	}
-	
 }

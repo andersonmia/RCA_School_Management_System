@@ -6,18 +6,14 @@ package rw.ac.rca.webapp.orm;
 import java.util.Date;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * @author Aphrodice Rwagaju
  *
  */
 @Entity
-//@DiscriminatorValue("Instuctor")
+@Table(name = "instructor")
 public class Instructor extends Person {
 	
 	/**
@@ -81,9 +77,5 @@ public class Instructor extends Person {
         this.courses.remove(course);
         course.getInstructors().remove(this);
     }
-    
-//	@Override
-//	String getAllNames() {
-//		return getFirstName()+ " "+ getLastName();
-//	}
+
 }

@@ -12,24 +12,15 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import rw.ac.rca.webapp.dao.UserDAO;
+import rw.ac.rca.webapp.orm.Student;
 import rw.ac.rca.webapp.orm.User;
 import rw.ac.rca.webapp.util.UserRole;
 
-/**
- * implements user interface extends DAO
- * 
- * @see UserDAO
- * @see DAO
- * @author Aphrodice Rwagaju
- * 
- */
+
 public class UserDAOImpl extends DAO implements UserDAO {
 	public static final Logger LOG = Logger.getLogger(UserDAOImpl.class);
 	public static UserDAOImpl instance;
 
-	/**
-	 * @return user instance
-	 */
 	public static UserDAOImpl getInstance() {
 		if (instance == null) {
 			return new UserDAOImpl();
@@ -42,12 +33,11 @@ public class UserDAOImpl extends DAO implements UserDAO {
 	private UserDAOImpl() {
 	}
 
-	/**
-	 * saves user
-	 * 
-	 * @return user
-	 * @throws Exception
-	 */
+	public Student getStudentById(int id) {
+		return null;
+	}
+
+
 	@Override
 	public User saveUser(User user) {
 		try {
@@ -62,12 +52,6 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		}
 	}
 
-	/**
-	 * updates user
-	 * 
-	 * @return user
-	 * @throws Exception
-	 */
 	@Override
 	public User updateUser(User user) {
 		try {
@@ -81,32 +65,18 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		}
 	}
 
-	/**
-	 * saves or updates user
-	 * 
-	 * @return user
-	 * @throws Exception
-	 */
+
 	@Override
-	public User saveOrUpdateUser(User user) {
+	public void saveOrUpdateUser(User user) {
 		try {
 			begin();
 			getSession().saveOrUpdate(user);
 			commit();
-			return user;
 		} catch (Exception e) {
 			rollback();
-			return null;
 		}
 	}
 
-	/**
-	 * deletes user
-	 * 
-	 * @return true
-	 * @return false
-	 * @throws Exception
-	 */
 	@Override
 	public boolean deleteUser(User user) {
 		try {
@@ -120,12 +90,6 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		}
 	}
 
-	/**
-	 * gets user by id
-	 * 
-	 * @return user
-	 * @throws Exception
-	 */
 	@Override
 	public User getUserById(int id) {
 		try {
@@ -141,12 +105,6 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		}
 	}
 
-	/**
-	 * gets all users
-	 * 
-	 * @return list users
-	 * @throws Exception
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAllUsers() {
@@ -162,12 +120,7 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		}
 	}
 
-	/**
-	 * gets user by username
-	 * 
-	 * @return users the list of users
-	 * @throws Exception
-	 */
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getUserByUsername(String username) {
@@ -184,12 +137,6 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		}
 	}
 
-	/**
-	 * gets users by name
-	 * 
-	 * @return users the list of users
-	 * @throws Exception
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getUserByFullName(String fullName) {

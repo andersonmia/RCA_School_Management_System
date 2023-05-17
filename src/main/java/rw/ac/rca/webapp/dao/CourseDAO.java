@@ -13,7 +13,7 @@ import rw.ac.rca.webapp.orm.Course;
  */
 public interface CourseDAO {
 	
-	public Course saveCourse(Course course);
+	public void saveCourse(Course course);
 	public Course updateCourse(Course course);
 	public Course saveOrUpdateCourse(Course course);
 	public boolean deleteCourse(Course course);
