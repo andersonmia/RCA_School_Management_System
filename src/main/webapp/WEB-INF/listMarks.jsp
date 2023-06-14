@@ -2,9 +2,10 @@
   Created by IntelliJ IDEA.
   User: mia
   Date: 16.05.23
-  Time: 16:52
+  Time: 17:38
   To change this template use File | Settings | File Templates.
 --%>
+
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="css/displaytag.css" type="text/css"/>
     <link rel="stylesheet" href="css/screen.css" type="text/css"/>
     <link rel="stylesheet" href="css/site.css" type="text/css"/>
-    <title>Course Registrations</title>
+    <title>Marks Registrations</title>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -69,9 +70,9 @@
         <c:if test="${authenticatedUser !=null}">
             <div class="options">
 
-                <a href="createcourse.php?page=createcourse">
+                <a href="createmarks.php?page=createmarks">
                     <button>
-                        <img src="icons/user_add.png"/> Create New Course
+                        <img src="icons/user_add.png"/> Create New Marks
                     </button>
                 </a>
             </div>
@@ -100,23 +101,18 @@
                 <table>
                     <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>code</td>
-                        <td>minimum student</td>
-                        <td>maximum student</td>
+                        <td>Student Name</td>
+                        <td>Subject</td>
+                        <td>Score</td>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${courses}" var="csr" varStatus="csrstatus">
+                    <c:forEach items="${marks}" var="mark" varStatus="markstatus">
                         <tr>
-                            <td>${csr.getId()}</td>
-                            <td>${csr.getName()}</td>
-                            <td>${csr.getCode()}</td>
-                            <td>${csr.getMinStudent()}</td>
-                            <td>${csr.getMaxStudent()}</td>
-
+                            <td>${mark.getStudent().getName()}</td>
+                            <td>${mark.getCourse().getName()}</td>
+                            <td>${mark.getScore()}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

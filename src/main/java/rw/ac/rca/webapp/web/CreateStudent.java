@@ -1,12 +1,13 @@
 package rw.ac.rca.webapp.web;
 
+
 import rw.ac.rca.webapp.dao.StudentDAO;
 import rw.ac.rca.webapp.dao.impl.StudentDAOImpl;
 import rw.ac.rca.webapp.orm.Student;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,8 +26,10 @@ public class CreateStudent extends HttpServlet {
         String pageRedirect = request.getParameter("page");
         HttpSession httpSession = request.getSession();
         Object user = httpSession.getAttribute("authenticatedUser");
+        System.out.println("The user in session is: " + user);
 
         if (pageRedirect != null) {
+            System.out.println("The print statement is and the only is: " + pageRedirect);
             if (pageRedirect.equals("createstudent")) {
                 request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
             } else {
@@ -39,36 +42,39 @@ public class CreateStudent extends HttpServlet {
         }
     }
 
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pageRedirect = request.getParameter("page");
         HttpSession httpSession = request.getSession();
         Object user = httpSession.getAttribute("authenticatedUser");
-        System.out.println("The user in session is: " + user);
 
-        if(pageRedirect != null){
-            if(pageRedirect.equals("createstudent")){
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                String firstName = request.getParameter("firstName");
-                String lastName = request.getParameter("lastName");
-                String dob = request.getParameter("dateOfBirth");
-                String phoneNumber = request.getParameter("phoneNumber");
+        if (pageRedirect != null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            if (pageRedirect.equals("createstudent")) {
+                Student student = null;
+                try {
+                    boolean isInternational = request.getParameter("isInternational") != null && Boolean.parseBoolean(request.getParameter("isInternational"));
+                    boolean isPartTime = request.getParameter("isPartTime") != null && Boolean.parseBoolean(request.getParameter("isPartTime"));
+                    boolean isRepeating = request.getParameter("isRepeating") != null && Boolean.parseBoolean(request.getParameter("isRepeating"));
+
+                    student = new Student(request.getParameter("firstName"),request.getParameter("lastName"),request.getParameter("email"),simpleDateFormat.parse(request.getParameter("dateOfBirth")),request.getParameter("phoneNumber"),isInternational,isPartTime,isRepeating);
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
 
                 try {
-                    Date dateOfBirth = dateFormat.parse(dob);
-                    Student student = new Student(firstName, lastName, dateOfBirth, phoneNumber);
                     studentDAO.saveStudent(student);
-
-                    request.setAttribute("success" , "Successfully created the Student" );
-                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request , response);
-                }catch (Exception e){
-                    request.setAttribute("error" , "Failed to create the Student" );
-                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request , response);
+                    request.setAttribute("success", "Successfully created the Course");
+                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
+                } catch (Exception e) {
+                    request.setAttribute("error", "Failed to create the Course");
+                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
                 }
-            }else{
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+            } else {
+                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
             }
-        }else{
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+        } else {
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
     }
 }

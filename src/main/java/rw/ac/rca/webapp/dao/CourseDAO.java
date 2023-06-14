@@ -20,4 +20,8 @@ public interface CourseDAO {
 	public Course getCourseById(int courseId);
 	public List<Course> getAllCourses();
 
+	public Course searchCourseByName(String name);
+
+
+
 }

@@ -3,6 +3,7 @@ package rw.ac.rca.webapp.web;
 
 import rw.ac.rca.webapp.dao.MarksDAO;
 import rw.ac.rca.webapp.dao.impl.MarksDAOImpl;
+import rw.ac.rca.webapp.orm.Course;
 import rw.ac.rca.webapp.orm.Marks;
 import rw.ac.rca.webapp.util.UserRole;
 
@@ -18,20 +19,10 @@ import java.util.List;
 public class ListMarks extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final MarksDAO marksDAO = MarksDAOImpl.getInstance();
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ListMarks() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-    //    /**
-//     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         String pageRedirect = request.getParameter("page");
 
         HttpSession httpSession = request.getSession();
@@ -40,12 +31,11 @@ public class ListMarks extends HttpServlet {
 
         if (pageRedirect != null) {
             if (pageRedirect.equals("marks") && request.getParameter("action").equals("list")) {
-
                 List<Marks> marks = marksDAO.getAllMarks();
                 httpSession.setAttribute("marks", marks);
                 UserRole[] userRoles = UserRole.values();
                 httpSession.setAttribute("userRoles", userRoles);
-                request.getRequestDispatcher("WEB-INF/marks.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/listMarks.jsp").forward(request , response);
             }
         } else {
             httpSession.setAttribute("error", "Invalid User. Try again!");
@@ -53,4 +43,9 @@ public class ListMarks extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
 }

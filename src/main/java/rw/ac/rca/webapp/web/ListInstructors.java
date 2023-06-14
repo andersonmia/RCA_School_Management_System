@@ -1,8 +1,9 @@
 package rw.ac.rca.webapp.web;
 
-import rw.ac.rca.webapp.dao.StudentDAO;
-import rw.ac.rca.webapp.dao.impl.StudentDAOImpl;
-import rw.ac.rca.webapp.orm.Student;
+
+import rw.ac.rca.webapp.dao.InstructorDAO;
+import rw.ac.rca.webapp.dao.impl.InstructorDAOImpl;
+import rw.ac.rca.webapp.orm.Instructor;
 import rw.ac.rca.webapp.util.UserRole;
 
 import javax.servlet.RequestDispatcher;
@@ -14,11 +15,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-public class ListStudents extends HttpServlet {
+public class ListInstructors extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private final StudentDAO studentDAO = StudentDAOImpl.getInstance();
+    private final InstructorDAO instructorDAO = InstructorDAOImpl.getInstance();
 
-    public ListStudents() {
+    public ListInstructors() {
         super();
     }
 
@@ -30,12 +31,12 @@ public class ListStudents extends HttpServlet {
         System.out.println("The user in session is: " + user);
 
         if (pageRedirect != null) {
-            if (pageRedirect.equals("students") && request.getParameter("action").equals("list")) {
-                List<Student> students = studentDAO.getAllStudents();
-                httpSession.setAttribute("students", students);
+            if (pageRedirect.equals("instructors") && request.getParameter("action").equals("list")) {
+                List<Instructor> instructors = instructorDAO.getAllInstructors();
+                httpSession.setAttribute("instructors", instructors);
                 UserRole[] userRoles = UserRole.values();
                 httpSession.setAttribute("userRoles", userRoles);
-                request.getRequestDispatcher("WEB-INF/listStudents.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/listInstructors.jsp").forward(request , response);
             }
         } else {
             httpSession.setAttribute("error", "Invalid User. Try again!");

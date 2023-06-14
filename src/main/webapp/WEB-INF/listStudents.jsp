@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: mia
   Date: 16.05.23
-  Time: 16:52
+  Time: 20:50
   To change this template use File | Settings | File Templates.
 --%>
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -69,9 +69,9 @@
         <c:if test="${authenticatedUser !=null}">
             <div class="options">
 
-                <a href="createcourse.php?page=createcourse">
+                <a href="createstudent.php?page=createstudent">
                     <button>
-                        <img src="icons/user_add.png"/> Create New Course
+                        <img src="icons/user_add.png"/> Create New Student
                     </button>
                 </a>
             </div>
@@ -96,26 +96,60 @@
                                         maxlength="50" readonly="readonly" name="savedBy" id="savedBy"
                                         hidden="hidden" value="${authenticatedUser.id}"/></td>
 
-
                 <table>
                     <thead>
+                        <%--    <form action="createstudent.php?page=createstudent" method="post">
+            <input type="text" placeholder="" required name="firstName">
+            <input type="text" placeholder="" required name="lastName">
+            <label>
+
+                <input type="date" placeholder="Date of Birth" required name="dateOfBirth">
+            </label>
+            <input type="email" placeholder="" required name="email">
+            <input type="number" placeholder="" required name="phoneNumber">
+            <input type="hidden" name="isInternational" value="false"/>
+            <label>
+
+                <input type="checkbox" name="isInternational" value="true"/>
+            </label>
+
+            <input type="hidden" name="isPartTime" value="false"/>
+            <label>
+
+                <input type="checkbox" name="isPartTime" value="true"/>
+            </label>
+
+            <input type="hidden" name="isRepeating" value="false"/>
+            <label>
+
+                <input type="checkbox" name="isRepeating" value="true"/>
+            </label>
+
+            <input type="submit" value="Create Student">
+        </form>--%>
                     <tr>
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>code</td>
-                        <td>minimum student</td>
-                        <td>maximum student</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Date Of Birth</td>
+                        <td>Email</td>
+                        <td>Phone Number</td>
+                        <td>International Student</td>
+                        <td>Part Time</td>
+                        <td>Repeating Student</td>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${courses}" var="csr" varStatus="csrstatus">
+                    <c:forEach items="${students}" var="student" varStatus="studentstatus">
                         <tr>
-                            <td>${csr.getId()}</td>
-                            <td>${csr.getName()}</td>
-                            <td>${csr.getCode()}</td>
-                            <td>${csr.getMinStudent()}</td>
-                            <td>${csr.getMaxStudent()}</td>
+                            <td>${student.getFirstName()}</td>
+                            <td>${student.getLastName()}</td>
+                            <td>${student.getDateOfBirth()}</td>
+                            <td>${student.getEmail()}</td>
+                            <td>${student.getPhoneNumber()}</td>
+                            <td>${student.isInternational()}</td>
+                            <td>${student.isPartTime()}</td>
+                            <td>${student.isRepeating()}</td>
 
                         </tr>
                     </c:forEach>

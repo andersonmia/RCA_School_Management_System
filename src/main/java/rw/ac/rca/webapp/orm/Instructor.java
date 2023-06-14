@@ -8,17 +8,10 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-/**
- * @author Aphrodice Rwagaju
- *
- */
 @Entity
 @Table(name = "instructor")
 public class Instructor extends Person {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 6073878228230771199L;
 	private double salary;
 	private Date remunerationDate;
@@ -53,11 +46,7 @@ public class Instructor extends Person {
 	}
 	public Instructor() {
 	}
-	
-	public Instructor(double salary) {
-		this.salary = salary;
-	}
-	
+
 	public Address getAddress() {
 		return address;
 	}
@@ -66,16 +55,18 @@ public class Instructor extends Person {
 		this.address = address;
 	}
 	
-	//To add course to an instructor helper method
 	public void addCourse(Course course) {
         this.courses.add(course);
-        //if(course.getInstructors()!=null)
         course.getInstructors().add(this);
     }
-	//To remove course to an instructor helper method
     public void removeCourse(Course course) {
         this.courses.remove(course);
         course.getInstructors().remove(this);
     }
 
+	public Instructor(String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, double salary, Date remunerationDate) {
+		super(firstName, lastName, email, dateOfBirth, phoneNumber);
+		this.salary = salary;
+		this.remunerationDate = remunerationDate;
+	}
 }

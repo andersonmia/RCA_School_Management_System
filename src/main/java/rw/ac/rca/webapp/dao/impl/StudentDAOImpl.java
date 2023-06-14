@@ -25,16 +25,14 @@ public class StudentDAOImpl extends DAO implements StudentDAO {
     }
 
     @Override
-    public Student saveStudent(Student student) {
+    public void saveStudent(Student student) {
         try {
             begin();
-            Student std = (Student) getSession().save(student);
+            getSession().save(student);
             commit();
-            return std;
 
         } catch (Exception e) {
             rollback();
-            return null;
         }
     }
 
@@ -89,6 +87,21 @@ public class StudentDAOImpl extends DAO implements StudentDAO {
             return null;
         }
     }
+
+    public Student searchStudentByName(String name) {
+        try {
+            begin();
+            Query query = getSession().createQuery("from Student where firstName= :name or lastName= :name");
+            query.setString("name", name);
+            Student student = (Student) query.uniqueResult();
+            commit();
+            return student;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
+
 
     @SuppressWarnings("unchecked")
 

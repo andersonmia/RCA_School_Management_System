@@ -22,8 +22,9 @@ public class Marks {
 
     public Marks() {}
 
-    public Marks(Student student, float score) {
+    public Marks(Student student, Course course, float score) {
         this.student = student;
+        this.course = course;
         this.score = score;
     }
 
@@ -45,6 +46,14 @@ public class Marks {
 
     public float getScore() {
         return score;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     public void setScore(float score) {

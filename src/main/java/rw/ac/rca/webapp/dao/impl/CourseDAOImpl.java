@@ -108,4 +108,19 @@ public class CourseDAOImpl extends DAO implements CourseDAO {
 			return null;
 		}
 	}
+
+	public Course searchCourseByName(String name) {
+		try {
+			begin();
+			Query query = getSession().createQuery("from Course where name= :name");
+			query.setString("name", name);
+			Course course = (Course) query.uniqueResult();
+			commit();
+			return course;
+		} catch (Exception e) {
+			rollback();
+			return null;
+		}
+	}
+
 }

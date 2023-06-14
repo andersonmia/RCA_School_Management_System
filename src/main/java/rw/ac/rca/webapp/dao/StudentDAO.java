@@ -5,7 +5,7 @@ import rw.ac.rca.webapp.orm.Student;
 
 public interface StudentDAO {
 
-    public Student saveStudent(Student student);
+    public void saveStudent(Student student);
 
     public Student updateStudent(Student student);
 
@@ -16,6 +16,8 @@ public interface StudentDAO {
     public static Student getStudentById(int studentId) {
         return null;
     }
+
+    public Student searchStudentByName(String name);
 
     public List<Student> getAllStudents();
 

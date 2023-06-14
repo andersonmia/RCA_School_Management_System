@@ -40,6 +40,7 @@
         <mapping class="rw.ac.rca.webapp.orm.Instructor"/>
         <mapping class="rw.ac.rca.webapp.orm.Person"/>
         <mapping class="rw.ac.rca.webapp.orm.Student"/>
+        <mapping class="rw.ac.rca.webapp.orm.Parent"/>
         <mapping class="rw.ac.rca.webapp.orm.Semester"/>
         <mapping class="rw.ac.rca.webapp.orm.Marks"/>
         <mapping class="rw.ac.rca.webapp.orm.EnrollmentLevel"/>

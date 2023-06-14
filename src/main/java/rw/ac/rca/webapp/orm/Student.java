@@ -16,7 +16,6 @@ public class Student extends Person implements Serializable {
 	@OneToMany(mappedBy = "student")
 	private List<Enrol> enrols;
 
-
 	@OneToMany(mappedBy = "student")
 	private List<Marks> marks;
 
@@ -24,16 +23,17 @@ public class Student extends Person implements Serializable {
 	@JoinColumn(name = "address_id")
 	private Address address;
 
+	@ManyToOne
+	@JoinColumn(name = "parent_id")
+	private Parent parent;
 
 	public Student() {}
 
-	public Student(boolean isInternational, boolean isPartTime, boolean isRepeating) {
+	public Student(String firstName, String lastName, String email, Date dateOfBirth, String phoneNumber, boolean isInternational, boolean isPartTime, boolean isRepeating) {
+		super(firstName, lastName, email, dateOfBirth, phoneNumber);
 		this.isInternational = isInternational;
 		this.isPartTime = isPartTime;
 		this.isRepeating = isRepeating;
-	}
-
-	public Student(String firstName, String lastName, Date dateOfBirth, String phoneNumber) {
 	}
 
 	public boolean isInternational() {
@@ -84,4 +84,15 @@ public class Student extends Person implements Serializable {
 		this.address = address;
 	}
 
+	public Parent getParent() {
+		return parent;
+	}
+
+	public void setParent(Parent parent) {
+		this.parent = parent;
+	}
+
+	public String getName() {
+		return getFirstName() + " " + getLastName();
+	}
 }

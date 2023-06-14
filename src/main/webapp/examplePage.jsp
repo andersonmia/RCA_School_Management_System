@@ -16,7 +16,7 @@
 					name="username" id="username" /></td>
 			</tr>
 			<tr>
-				<td align="right">Password</b></td>
+				<td align="right">Password<b></b></td>
 				<td align="left"><input type="password" size="25"
 					maxlength="50" name="password" id="password" /></td>
 			</tr>

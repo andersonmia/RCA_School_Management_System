@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: mia
@@ -6,6 +5,7 @@
   Time: 16:55
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -77,7 +77,7 @@
             color: #ffffff;
             font-size: 16px;
             cursor: pointer;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
 
         select {
@@ -119,8 +119,14 @@
         <input type="text" placeholder="Course Code" required name="code">
         <input type="number" placeholder="Min Students" required name="min">
         <input type="number" placeholder="Max Students" required name="max">
-        <input type="date" placeholder="Start Date" required name="start">
-        <input type="date" placeholder="End Date" required name="end">
+        <label>
+            Start Date<br>
+            <input type="date" placeholder="Start Date" required name="start">
+        </label>
+        <label>
+            End Date<br>
+            <input type="date" placeholder="End Date" required name="end">
+        </label>
         <input type="submit" value="Create Course">
     </form>
 

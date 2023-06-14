@@ -1,11 +1,10 @@
 <%--
   Created by IntelliJ IDEA.
   User: mia
-  Date: 16.05.23
-  Time: 17:38
+  Date: 13.06.23
+  Time: 20:55
   To change this template use File | Settings | File Templates.
 --%>
-
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -18,28 +17,27 @@
     <link rel="stylesheet" href="css/displaytag.css" type="text/css"/>
     <link rel="stylesheet" href="css/screen.css" type="text/css"/>
     <link rel="stylesheet" href="css/site.css" type="text/css"/>
-    <title>Course Registrations</title>
+    <title>Instructor Registrations</title>
     <style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
-    thead {
-        background-color: #008dd4;
-        color: white;
-        font-family: 'Quicksand', sans-serif;
-        font-weight: bold;
-    }
-</style>
-
+        thead {
+            background-color: #008dd4;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <div id="layout">
@@ -71,9 +69,9 @@
         <c:if test="${authenticatedUser !=null}">
             <div class="options">
 
-                <a href="createmarks.php?page=createmarks">
+                <a href="createinstructor.php?page=createinstructor">
                     <button>
-                        <img src="icons/user_add.png"/> Add marks
+                        <img src="icons/user_add.png"/> Create New Instructor
                     </button>
                 </a>
             </div>
@@ -83,7 +81,7 @@
                         <tr>
                             <td style="color: #000000;">Enter User ID</td>
                             <td><input type="text" name="id" id="id"/></td>
-                            <td><input type=le'submit' name="userregistrationsearch"
+                            <td><input type='submit' name="userregistrationsearch"
                                        value='search'/></td>
                         </tr>
                     </table>
@@ -102,21 +100,26 @@
                 <table>
                     <thead>
                     <tr>
-
-                        <td>Student Name</td>
-                        <td>Subject</td>
-                        <td>Marks</td>
-
+                        <td>FirstName</td>
+                        <td>LastName</td>
+                        <td>DateOfBirth</td>
+                        <td>PhoneNumber</td>
+                        <td>Email</td>
+                        <td>Renumeration Date</td>
+                        <td>Salary</td>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${marks}" var="mrk" varStatus="mrkstatus">
+                    <c:forEach items="${instructors}" var="inst" varStatus="instStatus">
                         <tr>
-                            <td>${mrk.getStudentName()}</td>
-                            <td>${mrk.getSubject()}</td>
-                            <td>${mrk.getMarksObtained()}</td>
-
+                            <td>${inst.getFirstName()}</td>
+                            <td>${inst.getLastName()}</td>
+                            <td>${inst.getDateOfBirth()}</td>
+                            <td>${inst.getPhoneNumber()}</td>
+                            <td>${inst.getEmail()}</td>
+                            <td>${inst.getRemunerationDate()}</td>
+                            <td>${inst.getSalary()}</td>
 
                         </tr>
                     </c:forEach>
@@ -130,4 +133,5 @@
 </div>
 </body>
 </html>
+
 

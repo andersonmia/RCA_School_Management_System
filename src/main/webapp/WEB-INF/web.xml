@@ -15,7 +15,9 @@
     <url-pattern>/login.php</url-pattern>
   </servlet-mapping>
 
+  <!-- Existing servlet mappings -->
 
+  <!-- CreateCourse -->
   <servlet>
     <description></description>
     <display-name>CreateCourse</display-name>
@@ -26,6 +28,8 @@
     <servlet-name>CreateCourse</servlet-name>
     <url-pattern>/createcourse.php</url-pattern>
   </servlet-mapping>
+
+  <!-- ListCourse -->
   <servlet>
     <description></description>
     <display-name>ListCourse</display-name>
@@ -37,7 +41,7 @@
     <url-pattern>/listcourses.php</url-pattern>
   </servlet-mapping>
 
-
+  <!-- CreateUser -->
   <servlet>
     <description></description>
     <display-name>CreateUser</display-name>
@@ -48,6 +52,8 @@
     <servlet-name>CreateUser</servlet-name>
     <url-pattern>/createuser.php</url-pattern>
   </servlet-mapping>
+
+  <!-- ListUser -->
   <servlet>
     <description></description>
     <display-name>ListUser</display-name>
@@ -59,7 +65,7 @@
     <url-pattern>/listuser.php</url-pattern>
   </servlet-mapping>
 
-
+  <!-- CreateMarks -->
   <servlet>
     <description></description>
     <display-name>CreateMarks</display-name>
@@ -70,6 +76,8 @@
     <servlet-name>CreateMarks</servlet-name>
     <url-pattern>/createmarks.php</url-pattern>
   </servlet-mapping>
+
+  <!-- ListMarks -->
   <servlet>
     <description></description>
     <display-name>ListMarks</display-name>
@@ -81,17 +89,19 @@
     <url-pattern>/listmarks.php</url-pattern>
   </servlet-mapping>
 
-
+  <!-- ListStudents -->
   <servlet>
     <description></description>
-    <display-name>ListStudent</display-name>
-    <servlet-name>ListStudent</servlet-name>
+    <display-name>ListStudents</display-name>
+    <servlet-name>ListStudents</servlet-name>
     <servlet-class>rw.ac.rca.webapp.web.ListStudents</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ListStudent</servlet-name>
+    <servlet-name>ListStudents</servlet-name>
     <url-pattern>/liststudents.php</url-pattern>
   </servlet-mapping>
+
+  <!-- CreateStudent -->
   <servlet>
     <description></description>
     <display-name>CreateStudent</display-name>
@@ -101,6 +111,54 @@
   <servlet-mapping>
     <servlet-name>CreateStudent</servlet-name>
     <url-pattern>/createstudent.php</url-pattern>
+  </servlet-mapping>
+
+  <!-- ListInstructors -->
+  <servlet>
+    <description></description>
+    <display-name>ListInstructors</display-name>
+    <servlet-name>ListInstructors</servlet-name>
+    <servlet-class>rw.ac.rca.webapp.web.ListInstructors</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListInstructors</servlet-name>
+    <url-pattern>/listinstructors.php</url-pattern>
+  </servlet-mapping>
+
+  <!-- CreateInstructor -->
+  <servlet>
+    <description></description>
+    <display-name>CreateInstructor</display-name>
+    <servlet-name>CreateInstructor</servlet-name>
+    <servlet-class>rw.ac.rca.webapp.web.CreateInstructor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateInstructor</servlet-name>
+    <url-pattern>/createinstructor.php</url-pattern>
+  </servlet-mapping>
+
+  <!-- CreateParent -->
+  <servlet>
+    <description></description>
+    <display-name>CreateParent</display-name>
+    <servlet-name>CreateParent</servlet-name>
+    <servlet-class>rw.ac.rca.webapp.web.CreateParent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateParent</servlet-name>
+    <url-pattern>/createparent.php</url-pattern>
+  </servlet-mapping>
+
+  <!-- ListParents -->
+  <servlet>
+    <description></description>
+    <display-name>ListParents</display-name>
+    <servlet-name>ListParents</servlet-name>
+    <servlet-class>rw.ac.rca.webapp.web.ListParents</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListParents</servlet-name>
+    <url-pattern>/listparents.php</url-pattern>
   </servlet-mapping>
 
 

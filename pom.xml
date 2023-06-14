@@ -95,6 +95,16 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.7.0</version>
 		</dependency>
+	  <dependency>
+		  <groupId>com.lowagie</groupId>
+		  <artifactId>itext</artifactId>
+		  <version>2.1.7</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>com.itextpdf</groupId>
+		  <artifactId>itextpdf</artifactId>
+		  <version>5.5.13.3</version>
+	  </dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
@@ -152,7 +162,14 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- Hibernate -->
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>4.0.1</version>
+		  <scope>provided</scope>
+	  </dependency>
+
+	  <!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
