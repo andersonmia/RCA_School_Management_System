@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ListParents extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -43,8 +41,10 @@ public class ListParents extends HttpServlet {
                 parent.getChildren().size(); // Eagerly fetch the children collection
                 uniqueParents.add(parent);
             }
+            List<Parent> sortedParents = new ArrayList<>(uniqueParents);
+            sortedParents.sort(Comparator.comparingLong(Parent::getId));
 
-            httpSession.setAttribute("parents", uniqueParents);
+            httpSession.setAttribute("parents", sortedParents);
             UserRole[] userRoles = UserRole.values();
             httpSession.setAttribute("userRoles", userRoles);
 
