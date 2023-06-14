@@ -22,6 +22,11 @@
             padding: 8px;
         }
 
+        .child {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
         thead {
             background-color: #008dd4;
             color: white;
@@ -64,43 +69,44 @@
             <hr/>
 
             <table style="border: 0;">
-                <table>
-                    <thead>
+                <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+                    <td>Date of Birth</td>
+                    <td>Phone Number</td>
+                    <td>Children</td>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${parents}" var="parent" varStatus="parentStatus">
                     <tr>
-                        <td>ID</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>Email</td>
-                        <td>Date of Birth</td>
-                        <td>Phone Number</td>
-                        <td>Children</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${parents}" var="parent" varStatus="parentStatus">
-                        <tr>
-                            <td>${parent.getId()}</td>
-                            <td>${parent.getFirstName()}</td>
-                            <td>${parent.getLastName()}</td>
-                            <td>${parent.getEmail()}</td>
-                            <td>${parent.getDateOfBirth()}</td>
-                            <td>${parent.getPhoneNumber()}</td>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${not empty parent.children}">
+                        <td>${parent.getId()}</td>
+                        <td>${parent.getFirstName()}</td>
+                        <td>${parent.getLastName()}</td>
+                        <td>${parent.getEmail()}</td>
+                        <td>${parent.getDateOfBirth()}</td>
+                        <td>${parent.getPhoneNumber()}</td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${not empty parent.children}">
+                                    <table>
                                         <c:forEach items="${parent.children}" var="child">
-                                            ${child.firstName} ${child.lastName}<br/>
+                                            <tr>
+                                                <td class="child">${child.lastName} ${child.firstName}</td>
+                                            </tr>
                                         </c:forEach>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <!-- Display empty value or leave it blank -->
-                                    </c:otherwise>
-                                </c:choose>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+                                    </table>
+                                </c:when>
+                                <c:otherwise>
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
             </table>
         </c:if>
     </div>
