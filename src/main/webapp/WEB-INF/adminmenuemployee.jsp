@@ -15,7 +15,7 @@
 					href="listevaluations.php?page=evaluations&&action=list"><img
 						src="icons/application_view_list.png" /> Marks records</a></li>
 			</ul></li>
-		
+
 	</c:when>
 	<c:otherwise>
 

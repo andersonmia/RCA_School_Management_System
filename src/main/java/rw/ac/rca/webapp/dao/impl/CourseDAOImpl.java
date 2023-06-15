@@ -8,6 +8,7 @@ import java.util.List;
 import org.hibernate.Query;
 import rw.ac.rca.webapp.dao.CourseDAO;
 import rw.ac.rca.webapp.orm.Course;
+import rw.ac.rca.webapp.orm.Student;
 
 /**
  * @author Aphrodice Rwagaju
@@ -123,4 +124,18 @@ public class CourseDAOImpl extends DAO implements CourseDAO {
 		}
 	}
 
+	@Override
+	public List<Course> getCoursesByStudent(Student student) {
+		try {
+			begin();
+			Query query = getSession().createQuery("SELECT c FROM Course c JOIN c.students s WHERE s.id = :studentId");
+			query.setInteger("studentId", student.getId());
+			List<Course> courses = query.list();
+			commit();
+			return courses;
+		} catch (Exception e) {
+			rollback();
+			return null;
+		}
+	}
 }

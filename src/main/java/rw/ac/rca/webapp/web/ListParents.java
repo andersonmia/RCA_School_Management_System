@@ -20,8 +20,6 @@ import java.util.*;
 public class ListParents extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final ParentDAO parentDAO = ParentDAOImpl.getInstance();
-    private final StudentDAO studentDAO = StudentDAOImpl.getInstance();
-
     public ListParents() {
         super();
     }

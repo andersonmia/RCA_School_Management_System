@@ -6,6 +6,7 @@ package rw.ac.rca.webapp.dao;
 import java.util.List;
 
 import rw.ac.rca.webapp.orm.Course;
+import rw.ac.rca.webapp.orm.Student;
 
 /**
  * @author Aphrodice Rwagaju
@@ -22,6 +23,7 @@ public interface CourseDAO {
 
 	public Course searchCourseByName(String name);
 
+	List<Course> getCoursesByStudent(Student student);
 
 
 }

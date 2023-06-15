@@ -3,6 +3,7 @@ package rw.ac.rca.webapp.dao.impl;
 import org.hibernate.Query;
 import rw.ac.rca.webapp.dao.MarksDAO;
 import rw.ac.rca.webapp.orm.Marks;
+import rw.ac.rca.webapp.orm.Student;
 
 import java.util.List;
 
@@ -90,6 +91,21 @@ public class MarksDAOImpl extends DAO implements MarksDAO {
         try {
             begin();
             Query query = getSession().createQuery("from Marks");
+            List<Marks> marks = query.list();
+            commit();
+            return marks;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Marks> getMarksByStudent(Student student) {
+        try {
+            begin();
+            Query query = getSession().createQuery("from Marks where student = :student");
+            query.setParameter("student", student);
             List<Marks> marks = query.list();
             commit();
             return marks;
