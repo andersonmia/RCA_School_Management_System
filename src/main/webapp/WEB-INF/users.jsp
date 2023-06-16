@@ -160,7 +160,7 @@ prefix="c" %>
           <div class="options" style="box-sizing: border-box;margin-left: 5px">
             <a href="createuser.php?page=createuser" style="padding: 5px">
               <button>
-                <img src="icons/user_add.png" /> New User Registration
+                <img src="icons/programmer.png" /> New User Registration
               </button></a
             >
           </div>

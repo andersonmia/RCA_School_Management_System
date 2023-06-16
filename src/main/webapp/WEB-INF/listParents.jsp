@@ -61,7 +61,7 @@
         <c:if test="${authenticatedUser != null}">
             <div class="options">
                 <a href="createparent.php?page=createparent">
-                    <button><img src="icons/user_add.png"/> Create New Parent</button>
+                    <button><img src="icons/programmer.png"/> Create New Parent</button>
                 </a>
             </div>
             <hr/>

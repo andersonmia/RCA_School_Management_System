@@ -11,6 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome Guest</title>
+    <link rel="stylesheet" href="../cssfile.css" />
+
     <style>
         body {
             display: flex;

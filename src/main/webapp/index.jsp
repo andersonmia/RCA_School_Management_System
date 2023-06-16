@@ -35,7 +35,7 @@
 			<table>
 				<tr>
 					<td align="center"><a
-						href="createuser.php?page=createuser"> <img src="icons/user_add.png" /> New User Registration
+						href="createuser.php?page=createuser"> <img src="icons/programmer.png" /> New User Registration
 					</a></td>
 				</tr>
 			</table>

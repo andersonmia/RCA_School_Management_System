@@ -5,6 +5,8 @@
     <title>Create Parent</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../cssfile.css" />
+
     <style>
         body {
             background-color: #f2f2f2;

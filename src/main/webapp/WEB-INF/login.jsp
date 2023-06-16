@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+<link rel="stylesheet" href="../cssfile.css" />
 <style>
     *{
         font-family: Work Sans, serif;
@@ -97,13 +98,10 @@
         <input type="submit" value="Login"/>
     </form>
     <c:if test="${authenticatedUser ==null}">
-        <table>
-            <tr>
-                <td align="center"><a
-                        href="createuser.php?page=createuser"> <img
-                        src="icons/user_add.png"/> New User Registration
-                </a></td>
-            </tr>
-        </table>
+        <div class="fieldset" style="margin-right: auto;margin-left: auto">
+            <img src="icons/programmer.png" alt="" width="30px" height="30px">
+            <a href="createuser.php?page=createuser">New User Registration</a>
+        </div>
+
     </c:if>
 </div>

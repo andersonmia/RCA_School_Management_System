@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../cssfile.css" />
 <c:choose>
 	<c:when
 		test="${authenticatedUser !=null}">

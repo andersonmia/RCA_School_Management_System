@@ -4,6 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="headeradmin.jsp">
 	<jsp:param value="Home Admin" name="title" /></jsp:include>
+<link rel="stylesheet" href="../cssfile.css" />
+
 <div id="middle" align="center">
 </div>
 <%@ include file="footer.jsp"%>

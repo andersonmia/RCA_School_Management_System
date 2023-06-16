@@ -10,6 +10,10 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+img{
+	height: 30px;
+	width: 30px;
+}
 
 body {
 	background-color: #FCE8F3;
@@ -174,7 +178,7 @@ a {
 	padding-right: 5px;
 }
 
-button {
+button, .ba {
 	height: 20px;
 	color: #99154B;
 	cursor: pointer;
@@ -182,7 +186,7 @@ button {
 	border: 1px solid #ccc;
 }
 
-button:HOVER {
+button:HOVER, .ba:hover {
 	height: 20px;
 	color: #fff;
 	cursor: pointer;
@@ -414,4 +418,20 @@ html ul.tabs li.active,html ul.tabs li.active a:hover,html ul.tabs li.active a
 	margin-bottom: 2rem;
 	justify-content: center;
 	align-items: center;
+}
+.fieldset{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;!important;
+	margin-right: auto;!important;
+	text-align: center;
+	width: 50%;
+}
+.fieldset>img{
+	height: 30px; !important;
+	width: 30px;!important;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

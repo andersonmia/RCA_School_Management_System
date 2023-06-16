@@ -94,13 +94,7 @@
     option {
       color: #333333;
     }
-    .fieldset{
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-    }
+
     form>div{
       width: 100%;
     }
@@ -120,7 +114,7 @@
 </head>
 
 <body>
-<form action="createuser.php?page=createuser" method="post" id="container">
+<form action="createuser.php?page=createuser" method="post" class="container">
   <h2>Enter User Details</h2>
   <c:if test="${message != null}">
     <div class="fieldset">
@@ -196,9 +190,8 @@
 </div>
   <input type="submit" name="saveDataUser" value="Create User" />
   <div class="fieldset">
-    <img src="icons/arrow-left.png" height="30px" width="30px">
-    <a href="login.php">Back to Login?</a>
-
+    <img src="icons/listUsers.png" height="30px" width="30px" alt="">
+    <a href="listuser.php">All Users</a>
   </div>
 </form>
 <%@ include file="footer.jsp" %>

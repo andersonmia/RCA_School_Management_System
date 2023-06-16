@@ -70,7 +70,7 @@
 
                 <a href="createstudent.php?page=createstudent">
                     <button>
-                        <img src="icons/user_add.png"/> Create New Student
+                        <img src="icons/programmer.png"/> Create New Student
                     </button>
                 </a>
             </div>
