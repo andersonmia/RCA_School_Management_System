@@ -30,7 +30,6 @@
         thead {
             background-color: #008dd4;
             color: white;
-            font-family: 'Quicksand', sans-serif;
             font-weight: bold;
         }
     </style>
@@ -38,8 +37,7 @@
 <body>
 <div id="layout">
     <div id="banner">
-        <div class="bannerlogo"></div>
-        <div class="text_header">RCA Management Information System</div>
+        <div>RCA Management Information System</div>
         <div class="right" style="text-align: right;">
             <c:if test="${authenticatedUser != null}">
                 <b>
@@ -47,7 +45,7 @@
                         <button>Profile</button>
                     </a> |
                     <img src="icons/user.png"/>
-                    <font color="#ffffff">${authenticatedUser.userRole}: ${authenticatedUser.username}</font> |
+                    <span style="color: #ffffff; ">${authenticatedUser.userRole}: ${authenticatedUser.username}</span> |
                     <a href="login.ap?page=logout"><font color="#ffffff">Logout</font></a>
                 </b>
             </c:if>

@@ -11,6 +11,7 @@
     body {
         background-color: #FCE8F3;
         color: #99154B;
+
     }
 
     .container {
@@ -29,14 +30,12 @@
     h2 {
         text-align: center;
         color: #333333;
-        font-family: 'Quicksand', sans-serif;
-        margin-top: 10px;
+          margin-top: 10px;
     }
 
     p, a {
         text-align: center;
-        font-family: 'Quicksand', sans-serif;
-        text-decoration: none;
+          text-decoration: none;
         color: #99154B ;
     }
 

@@ -34,7 +34,6 @@
         thead {
             background-color: #008dd4;
             color: white;
-            font-family: 'Quicksand', sans-serif;
             font-weight: bold;
         }
     </style>

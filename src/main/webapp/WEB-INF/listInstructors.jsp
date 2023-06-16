@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/screen.css" type="text/css"/>
     <link rel="stylesheet" href="css/site.css" type="text/css"/>
     <title>Instructor Registrations</title>
-    <style>
+    <style type="text/css">
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
@@ -34,7 +34,6 @@
         thead {
             background-color: #008dd4;
             color: white;
-            font-family: 'Quicksand', sans-serif;
             font-weight: bold;
         }
     </style>

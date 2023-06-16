@@ -1,23 +1,38 @@
 @CHARSET "UTF-8";
+/* external css file */
+
+@import url("https://fonts.googleapis.com/css?family=Work+Sans");
+
+* {
+	font-family: Work Sans, sans-serif;
+	color: #99154B;
+	font-size: 16px;
+	margin: 0;
+	box-sizing: border-box;
+}
 
 body {
-	background: #fff url("images/bgimg.png") repeat;
+	background-color: #FCE8F3;
 	margin-top: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 thead {
-	color: #428BCA;
+	color: #99154B;
 	font-size: 14px;
 }
-
-tbody {
-	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
+h2{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
+/*tbody {*/
+/*	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;*/
+/*}*/
 
 tbody tr {
 	height: 20px;
-	border: 1px solid #ccc;
-	border-style: solid none solid none;
 	padding: 2px 5px;
 }
 
@@ -30,19 +45,24 @@ hr {
 	width: auto;
 	float: left;
 	clear: left;
-	margin-top: 0px;
+	margin-top:0 ;
+	/*border: 2px solid saddlebrown;*/
 }
 
 .summary {
 	width: auto;
-	margin-top: 0px;
+	margin-top:0 ;
 	float: left;
 }
 
 .search {
 	width: auto;
 	float: right;
-	margin-top: 0px;
+	clear: right;
+	margin-top:0 ;
+	color: #99154b;
+	/*border: 2px solid saddlebrown;*/
+
 }
 
 #layout {
@@ -51,7 +71,7 @@ hr {
 	width: 1000px;
 	height: auto;
 	position: static;
-	margin-top: 0px;
+	margin-top:0 ;
 }
 
 #layoutlogin {
@@ -60,7 +80,7 @@ hr {
 	width: 400px;
 	height: auto;
 	position: static;
-	margin-top: 0px;
+	margin-top:0 ;
 }
 
 #banner {
@@ -73,12 +93,13 @@ hr {
 }
 .bannerlogo {
 	background: #fff url("images/rcalogo.png") no-repeat;
-	height: 90px;
+	height: 100px;
 	width: 100px;
+	border-radius: 50%;
 	font-style: normal;
-	border: 1px solid #ccc;
 	position: relative;
-	float: left;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 #bannerlogin {
@@ -101,16 +122,15 @@ hr {
 
 #middle {
 	position: absolute;
-	top: 50%;
+	top: 38vw;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	height: auto;
-	width: auto;
-	font-style: normal;
-	font-family: georgia, serif;
-	margin-top: 1px;
-	background: #fff url("images/banner_bg.jpg") top repeat-x;
-	border: 1px solid #ccc;
+	/*width: auto;*/
+	margin-top: 1rem;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #fce8f3;
 }
 
 #nav {
@@ -126,126 +146,117 @@ hr {
 }
 
 #footer {
-	background: url("images/banner_bg.png") repeat-x scroll left top transparent;
-	border-bottom: 1px solid #777;
-	color: #428BCA;
+	color: #99154B;
 	text-align: center;
 	width: 1000px;
 	font-size: x-small;
 	height: 30px;
 	font-family: georgia, serif;
+	margin: auto;
 }
 
 #footerlogin {
 	background: #80ADE5;
 	border: 1px solid #ccc;
-	border-bottom: 1px solid #777;
+	/*border-bottom: 1px solid #777;*/
 	color: #fff;
 	text-align: center;
 	width: 400px;
 	font-size: x-small;
 	height: 30px;
-	font-family: georgia, serif;
 }
 
 a {
-	color: #428BCA;
+	color: #99154B;
 	cursor: pointer;
 	text-decoration: none;
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
-a:HOVER {
-	text-decoration: underline;
-	color: red;
-}
-
 button {
 	height: 20px;
-	color: #428BCA;
+	color: #99154B;
 	cursor: pointer;
 	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
 	border: 1px solid #ccc;
-	border-style: solid solid solid solid;
 }
 
 button:HOVER {
 	height: 20px;
 	color: #fff;
 	cursor: pointer;
-	background: #428BCA;
+	background: #99154B;
 	border: 1px solid #ccc;
-	border-style: solid solid solid solid;
 }
 
 .text_header {
-	padding: 1px 0px 0px 35px;
+	padding: 1px0 0  35px;
 	margin-top: 1px;
 	width: 630px;
 	font-size: 34px;
 	font-weight: bolder;
-	color: #428BCA;
+	color: #99154B;
 	font-variant: small-caps;
 	text-align: right;
 	float: right;
 }
 
 .text_header_login {
-	padding: 1px 0px 0px 35px;
+	padding: 1px0 0  35px;
 	margin-top: 1px;
 	width: 360px;
 	font-size: 25px;
 	font-weight: bolder;
-	color: #428BCA;
+	color: #99154B;
 	font-variant: small-caps;
 	text-align: right;
 }
 
 .right {
-	padding: 1px 5px 0px 10px;
+	padding: 1px 5px0  10px;
 	width: 885px;
 	font-size: 14px;
 	font-weight: bolder;
 	float: right;
-	margin-right: 0px;
-	background: #428BCA;
+	margin-right:0 ;
+	background: #99154B;
 }
 
 .middleright {
-	padding: 1px 5px 0px 1px;
+	padding: 1px 5px0  1px;
 	width: 200px;
 	font-size: 12px;
 	font-weight: bolder;
 	float: right;
-	margin-right: 0px;
+	margin-right:0 ;
 }
 
 .middleleft {
-	padding: 1px 5px 0px 0px;
+	padding: 1px 5px0 0 ;
 	width: 788px;
 	font-size: 12px;
 	font-weight: bolder;
 	float: left;
-	margin-right: 0px;
+	margin-right:0 ;
 }
 
 .middleleftsearch {
-	padding: 1px 5px 0px 0px;
+	padding: 1px 5px0 0 ;
 	width: 588px;
 	font-size: 12px;
 	font-weight: bolder;
 	float: left;
-	margin-right: 0px;
+	margin-right:0 ;
 }
 
 .middlerightsearch {
-	padding: 1px 5px 0px 1px;
+	padding: 1px 5px0  1px;
 	width: 400px;
 	font-size: 12px;
 	font-weight: bolder;
 	float: right;
-	margin-right: 0px;
+	margin-right:0 ;
 }
 
 .display-table {
@@ -258,36 +269,32 @@ button:HOVER {
 /* Main menu
 ------------------------------------------*/
 #menu {
-	font-family: Arial;
+	padding: 1rem;
 	font-size: 12px;
 	width: 100%;
-	border: 1px solid #ccc;
-	border-style: solid none solid none;
-	float: left;
 	margin-top: 1px;
 	margin-bottom: 1px;
-	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
-	padding: 2px 0px 2px 0px;
+	align-items: center;
+	justify-content: space-between;
 }
 
 #menu>li>a {
-	color: #428BCA;
-	font-weight: bold;
+	color: #99154B;
 }
 
 #menu>li:hover>a {
-	background: #218D09;
-	color: #fff;
+background: #FDF2F8;
+	color: #99154B;
 }
 
 /* Submenu
 ------------------------------------------*/
 #menu ul li a {
-	color: #fff;
+	color: #99154B;
 }
 
 #menu ul li:hover a {
-	background: #428BCA;
+	background: #751A3D;
 	color: #fff;
 }
 
@@ -313,7 +320,7 @@ button:HOVER {
 }
 
 #menu ul {
-	background: #218D09;
+background: #FDF2F8;
 	position: absolute;
 	display: none;
 	z-index: 999;
@@ -321,12 +328,6 @@ button:HOVER {
 
 #menu li:hover ul {
 	display: block;
-}
-
-#tabs-wrapper {
-	border-bottom: 1px solid #ccc;
-	margin: 0 0 .75em;
-	padding: 0;
 }
 
 ul.secondary li a,ul.secondary li a:visited {
@@ -342,14 +343,13 @@ ul.secondary li.active a,ul.secondary li a:hover {
 }
 
 ul.primary li.active a,ul.secondary li.active a {
-	font-weight: bold;
 	text-decoration: none;
 }
 
 /* Tabs formating
 ------------------------------------------*/
 ul.tabs {
-	border-bottom: 3px solid #428BCA;
+	border-bottom: 3px solid #99154B;
 	float: left;
 	list-style: none;
 	margin: 0;
@@ -377,63 +377,41 @@ ul.tabs li a {
 }
 
 ul.tabs li a:hover {
-	background: #428BCA;
+	background: #99154B;
 	color: #fff;
 }
 
 ul.tabs li.active {
-	background: #428BCA;
+	background: #99154B;
 	color: #fff;
 }
 
 html ul.tabs li.active,html ul.tabs li.active a:hover,html ul.tabs li.active a
 	{
-	background: #428BCA;
+	background: #99154B;
 	color: #fff;
 }
 
-.tab_container {
-	border: 1px solid #999;
-	clear: both;
-	float: left;
-	margin-top: 5px;
-	overflow: hidden;
-	width: 100%;
-}
 
-.tab_content {
-	padding: 0;
+.container {
+	margin: 10% auto 50px;
+	min-width: 400px;
+	max-width: 60vw;
+	background-color: #ffffff;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	color: #99154B;
 }
-
-.clear-block:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-}
-
-.clear-block {
-	display: inline-block;
-}
-/* Hides from IE-mac \*/
-html .clear-block {
-	height: 1%;
-}
-
-.clear-block {
-	display: block;
-}
-
-fieldset{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border: 1px solid #008dd4;
-}
-
-#middle legend{
-  color: #fff;
-  border: 1px solid #008dd4;
-  padding: 1px 5px 0 15px;
-  background: #008dd4 url("images/star.png") left top no-repeat;
+#header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+	justify-content: center;
+	align-items: center;
 }

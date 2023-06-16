@@ -5,7 +5,5 @@
 <jsp:include page="headeradmin.jsp">
 	<jsp:param value="Home Admin" name="title" /></jsp:include>
 <div id="middle" align="center">
-
-	<img src="images/picrca.jpg" style="width: 620px; height: 400px" />
 </div>
 <%@ include file="footer.jsp"%>

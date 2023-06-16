@@ -5,7 +5,6 @@
     <title>Create Parent</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #f2f2f2;
@@ -40,13 +39,11 @@
         h2 {
             text-align: center;
             color: #333333;
-            font-family: 'Quicksand', sans-serif;
             margin-top: 10px;
         }
 
         p, a {
             text-align: center;
-            font-family: 'Quicksand', sans-serif;
             text-decoration: none;
         }
         input[type="text"], input[type="password"] , input[type="date"] , input[type="number"], input[type="email"] {
