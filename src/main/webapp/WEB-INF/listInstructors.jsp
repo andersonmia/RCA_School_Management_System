@@ -144,7 +144,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD
     <c:if test="${authenticatedUser !=null}">
         <b>
             <div id="profile">
-                <div style="" class="fullname">
+                <div class="fullname">
                     <img src="icons/bts.png" id="bts" width="50px" height="50px"/>
                     <span style="color: #99154b">${authenticatedUser.fullName}</span>
                 </div>
@@ -169,7 +169,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD
                 <a href="createinstructor.php?page=createinstructor" class="ba"
                    style="padding: 15px;display: flex;align-items: center;"
                    style="padding: 12px">
-                    <img src="icons/programmer.png" height="30px" width="30px"/> Create New
+                    <img src="icons/teacher.png" height="30px" width="30px"/> Create New
                     Instructor
                 </a>
             </div>
