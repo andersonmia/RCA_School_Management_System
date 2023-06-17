@@ -14,8 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../cssfile.css" />
 
-    <style>
-        body {
+    <style type="text/css">
+* {
+                        font-family: Work Sans, serif;
+                        color: #99154b;
+                    }
+    body {
             background-color: #f2f2f2;
         }
 

@@ -32,14 +32,15 @@ public class CreateInstructor extends HttpServlet {
             if (pageRedirect.equals("createinstructor")) {
                 request.getRequestDispatcher("WEB-INF/createInstructor.jsp").forward(request, response);
             } else {
-                request.setAttribute("error ", "No user found");
+                request.setAttribute("error", "No user found");
                 request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
             }
         } else {
-            request.setAttribute("error ", "No user found");
+            request.setAttribute("error", "No user found");
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pageRedirect = request.getParameter("page");
         HttpSession httpSession = request.getSession();
@@ -50,7 +51,7 @@ public class CreateInstructor extends HttpServlet {
             if (pageRedirect.equals("createinstructor")) {
                 Instructor instructor = null;
                 try {
-                    instructor = new Instructor(request.getParameter("firstName"), request.getParameter("lastName"),request.getParameter("email"), simpleDateFormat.parse(request.getParameter("dateOfBirth")), request.getParameter("phoneNumber"), Double.parseDouble(request.getParameter("salary")), simpleDateFormat.parse(request.getParameter("remunerationDate")));
+                    instructor = new Instructor(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("email"), simpleDateFormat.parse(request.getParameter("dateOfBirth")), request.getParameter("phoneNumber"), Double.parseDouble(request.getParameter("salary")), simpleDateFormat.parse(request.getParameter("remunerationDate")));
                 } catch (ParseException e) {
                     throw new RuntimeException(e);
                 }

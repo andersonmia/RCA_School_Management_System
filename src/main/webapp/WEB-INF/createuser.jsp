@@ -19,7 +19,7 @@
           rel="stylesheet"
   />
 
-  <style>
+  <style type="text/css">
     * {
       font-family: Work Sans, serif;
     }
@@ -191,7 +191,7 @@
   <input type="submit" name="saveDataUser" value="Create User" />
   <div class="fieldset">
     <img src="icons/listUsers.png" height="30px" width="30px" alt="">
-    <a href="listuser.php">All Users</a>
+    <a href="listuser.php?page=users&&action=list">All Users</a>
   </div>
 </form>
 <%@ include file="footer.jsp" %>

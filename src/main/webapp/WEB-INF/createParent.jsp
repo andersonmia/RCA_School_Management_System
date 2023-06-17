@@ -7,7 +7,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../cssfile.css" />
 
-    <style>
+    <style type="text/css">
+* {
+                        font-family: Work Sans, serif;
+                        color: #99154b;
+                    }
+img{
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}>
         body {
             background-color: #f2f2f2;
         }

@@ -11,8 +11,8 @@
 	box-sizing: border-box;
 }
 img{
-	height: 30px;
-	width: 30px;
+	height: 80px;!important;
+	width: 80px;!important;
 }
 
 body {
@@ -304,6 +304,10 @@ background: #FDF2F8;
 
 #menu li:hover ul.noJS {
 	display: block;
+}
+.noJS>img{
+	width: 10px;
+	height: 10px;
 }
 
 #menu,#menu ul {

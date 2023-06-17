@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="cssfile.css" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <style type="text/css">
-        *{
+
+        * {
             font-family: Work Sans, serif;
             color: #99154B;
         }
@@ -25,7 +26,8 @@
             color: white;
             padding: 10px 15px;
         }
-        #button:hover{
+
+        #button:hover {
             background-color: white;
             color: #99154B;
         }
@@ -56,11 +58,13 @@
             padding: 10px;
             border-radius: 5px;
         }
-        #bts{
+
+        #bts {
             border-radius: 50%;
             border: 1px solid #D61F69;
         }
-        #logout:hover{
+
+        #logout:hover {
             background-color: #D61F69;
             color: white;
         }
@@ -82,7 +86,7 @@
                 <div id="profile">
                     <div style="display: flex;align-items: center;gap: 10px">
                         <img src="icons/bts.png" id="bts" width="50px" height="50px"/>
-                        <span style="color: #99154B" >${authenticatedUser.fullName}</span>
+                        <span style="color: #99154B">${authenticatedUser.fullName}</span>
                     </div>
                     <a href="login.php?logout=logout" class="span" id="logout">Logout</a>
                     <a href="listuser.php?page=profile&&id=${authenticatedUser.id}" id="button">Profile</a>

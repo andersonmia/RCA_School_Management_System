@@ -33,11 +33,11 @@ public class CreateStudent extends HttpServlet {
             if (pageRedirect.equals("createstudent")) {
                 request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
             } else {
-                request.setAttribute("error ", "No user found");
+                request.setAttribute("error", "No user found");
                 request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
             }
         } else {
-            request.setAttribute("error ", "No user found");
+            request.setAttribute("error", "No user found");
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
     }
@@ -64,7 +64,7 @@ public class CreateStudent extends HttpServlet {
 
                 try {
                     studentDAO.saveStudent(student);
-                    request.setAttribute("success", "Successfully created the Course");
+                    request.setAttribute("success", "Successfully created the Student");
                     request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
                 } catch (Exception e) {
                     request.setAttribute("error", "Failed to create the Course");

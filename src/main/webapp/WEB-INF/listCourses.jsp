@@ -18,7 +18,14 @@
     <link rel="stylesheet" href="css/screen.css" type="text/css"/>
     <link rel="stylesheet" href="css/site.css" type="text/css"/>
     <title>Course Registrations</title>
-    <style>
+    <style type="text/css">
+* {
+                        font-family: Work Sans, serif;
+                        color: #99154b;
+                    }
+img{
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}>
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;

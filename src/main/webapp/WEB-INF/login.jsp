@@ -5,7 +5,14 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 <link rel="stylesheet" href="../cssfile.css" />
-<style>
+<style type="text/css">
+* {
+                        font-family: Work Sans, serif;
+                        color: #99154b;
+                    }
+img{
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}>
     *{
         font-family: Work Sans, serif;
     }
@@ -98,8 +105,8 @@
         <input type="submit" value="Login"/>
     </form>
     <c:if test="${authenticatedUser ==null}">
-        <div class="fieldset" style="margin-right: auto;margin-left: auto">
-            <img src="icons/programmer.png" alt="" width="30px" height="30px">
+        <div class="fieldset" style="display: flex;margin-right: auto;margin-left: auto;align-items: center;gap: 8px;margin-top: 20px">
+            <img src="icons/programmer.png" alt="" width="30px" height="30px" style="border-radius: 50%">
             <a href="createuser.php?page=createuser">New User Registration</a>
         </div>
 
