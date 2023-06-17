@@ -192,7 +192,6 @@
                 </form>
             </div>
         </div>
-        <form action="listcourses?page=statusapproval" method="post">
 
             <div class="beforeTable">
                 <table>
@@ -233,7 +232,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${marks}" var="mark" varStatus="markstatus">
+                    <c:forEach items="${courses}" var="csr" varStatus="csrstatus">
                         <tr>
                             <td class="td">${csr.getId()}</td>
                             <td class="td">${csr.getName()}</td>
@@ -245,7 +244,6 @@
                     </tbody>
                 </table>
             </div>
-        </form>
     </c:if>
 </div>
 <%@ include file="footer.jsp" %>
