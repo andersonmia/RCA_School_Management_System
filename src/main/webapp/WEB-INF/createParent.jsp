@@ -5,6 +5,7 @@
     <title>Create Parent</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"/>
     <link rel="stylesheet" href="../cssfile.css"/>
     <style type="text/css">
         * {

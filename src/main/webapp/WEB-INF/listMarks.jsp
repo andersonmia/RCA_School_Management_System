@@ -13,7 +13,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD
     <link rel="stylesheet" href="css/displaytag.css" type="text/css"/>
     <link rel="stylesheet" href="css/screen.css" type="text/css"/>
     <link rel="stylesheet" href="css/site.css" type="text/css"/>
-    <title>Students Registrations</title>
+    <title>Marks Registrations</title>
     <style type="text/css">
 
         * {
